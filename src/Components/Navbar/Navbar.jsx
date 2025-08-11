@@ -1,6 +1,14 @@
-import './Nav.css'
-export const Nav = () => {
+import Link from 'react-router-dom';
+function Navbar() {
   return (
-    <div>Nav</div>
+    <nav className="navbar">
+      <div className="navbar-container">
+        <Link to="/" className="navbar-logo">
+          GOLIATH 
+        </Link>
+      </div>
+    </nav>
   )
 }
+
+export default Navbar
