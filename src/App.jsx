@@ -1,18 +1,19 @@
 import { useState } from 'react'
 import './App.css'
 import Navbar from './Components/Navbar/Navbar'
-import {BrowserRouter as BrowserRouter, Switch, Route} from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom';
+import Erro from './Components/Erro';
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <div className="Router">
-       <Navbar />
-       <Switch>
-        <Route path='/' exact />
-       </Switch>
+    <div>
+      <Navbar/>
+      <Routes>
+        <Route path="/"></Route>
+        <Route path="*" element={<Erro/>}></Route>
+      </Routes>
     </div>
-  )
+  );
 }
 
 export default App

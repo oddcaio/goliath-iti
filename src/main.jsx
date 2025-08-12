@@ -3,10 +3,10 @@ import './index.css'
 import App from './App.jsx'
 import Layout from './layout/Layout.jsx'
 import Nav from './Components/Navbar/Navbar'
+import { BrowserRouter } from 'react-router-dom'
 
 createRoot(document.getElementById('root')).render(
-    <Layout>
-      <Nav /> 
-      <App />
-    </Layout>
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
 )
