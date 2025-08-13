@@ -2,7 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import Navbar from './Components/Navbar/Navbar'
 import { Route, Routes } from 'react-router-dom';
-import Erro from './Components/Erro';
+import Erro from './Erro';
 function App() {
 
   return (

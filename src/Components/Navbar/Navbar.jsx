@@ -21,6 +21,16 @@ function Navbar() {
               Home
             </Link>
           </li>
+                    <li className='nav-item'>
+            <Link to='/certificados' className='nav-links' onClick={closeMobileMenu}>
+              Certificados
+            </Link>
+                      <li className='nav-item'>
+            <Link to='/estrutura' className='nav-links' onClick={closeMobileMenu}>
+              Estrutura
+            </Link>
+          </li>
+          </li>
         </ul>
       </div>
     </nav>
