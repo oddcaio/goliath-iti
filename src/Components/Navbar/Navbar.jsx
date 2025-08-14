@@ -1,11 +1,13 @@
 import { Link, useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
+import { Button } from '../button/Button';
 function Navbar() {
 
   const navigate = useNavigate();
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
@@ -21,17 +23,18 @@ function Navbar() {
               Home
             </Link>
           </li>
-                    <li className='nav-item'>
+          <li className='nav-item'>
             <Link to='/certificados' className='nav-links' onClick={closeMobileMenu}>
               Certificados
             </Link>
-                      <li className='nav-item'>
-            <Link to='/estrutura' className='nav-links' onClick={closeMobileMenu}>
-              Estrutura
-            </Link>
-          </li>
+            <li className='nav-item'>
+              <Link to='/estrutura' className='nav-links' onClick={closeMobileMenu}>
+                Estrutura
+              </Link>
+            </li>
           </li>
         </ul>
+        <Button buttonStyle={'btn--outline'}>VEJA TODAS APIS</Button>
       </div>
     </nav>
   );
