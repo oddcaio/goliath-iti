@@ -54,6 +54,7 @@
     height: 80px;
 }
 .nav-links {
+    font-size:27px;
     color: #fff;
     display: flex;
     align-items: center;
