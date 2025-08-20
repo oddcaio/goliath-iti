@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Navbar.css';
-
+import Logo from '../../assets/logo.svg';
+import Logo2 from '../../assets/segundalogo.png';
 export default function Navbar() {
   const [showMenu, setShowMenu] = useState(true);
 
@@ -25,9 +26,10 @@ export default function Navbar() {
           </ul>
         ) : (
           <div className="nav-images">
-            <img src="https://placehold.co/40x40" alt="img1" />
-            <img src="https://placehold.co/40x40" alt="img2" />
-            <img src="https://placehold.co/40x40" alt="img3" />
+            <img src={Logo} alt="Logo ITI" width="130" height="auto" />
+            <p style={{ fontFamily: "Kumbh Sans, sans-serif", color: "white" }}>
+              Ministério da Gestão e da Inovação em Serviços Públicos</p>
+            <img src={Logo2} alt="Logo ITI" width="130" height="auto" />
           </div>
         )}
       </div>
