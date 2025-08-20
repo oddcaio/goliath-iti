@@ -1,56 +1,36 @@
-import { Link, useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
-import { Button } from '../button/Button';
 import './Navbar.css';
-function Navbar() {
 
-  const navigate = useNavigate();
-  const [click, setClick] = useState(false);
-  const [button, setButton] = useState(true)
-
-  const handleClick = () => setClick(!click);
-  const closeMobileMenu = () => setClick(false);
-
-  const showButton = () => {
-    if(window.innerWidth <= 960) {
-      setButton(false);
-  } else {
-    setButton(true);
-  }
-};
-
-  window.addEventListener('resize', showButton);
+export default function Navbar() {
+  const [showMenu, setShowMenu] = useState(true);
 
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <h2>
-          <Link to="/" className='navbar-logo'> Iti Goliath</Link>
-        </h2>
-        <div className="menu-icon" onClick={handleClick}>
-          <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
+        <a href="/" className="navbar-logo">ITI GOLIATH</a>
+        <div
+          className="menu-icon"
+          onClick={() => setShowMenu((prev) => !prev)}
+        >
+          &#9776;
         </div>
-        <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-          <li className='nav-item'>
-            <Link to='/' className='nav-links' onClick={closeMobileMenu}>
-              Home
-            </Link>
-          </li>
-          <li className='nav-item'>
-            <Link to='/certificados' className='nav-links' onClick={closeMobileMenu}>
-              Certificados
-            </Link>
-          </li>
-          <li className='nav-item'>
-            <Link to='/estrutura' className='nav-links' onClick={closeMobileMenu}>
-              Estrutura
-            </Link>
-          </li>
-        </ul>
-        <Button buttonStyle={'btn--outline'}>VEJA TODAS APIS</Button>
+        {showMenu ? (
+          <ul className="nav-menu">
+            <li className="nav-item"><a href="/" className="nav-links">Home</a></li>
+            <li className="nav-item"><a href="/certificados" className="nav-links">Certificados</a></li>
+            <li className="nav-item"><a href="/estrutura" className="nav-links">Estrutura</a></li>
+            <li className="nav-item">
+              <a href="/todas-apis" className="nav-btn">VEJA TODAS APIS</a>
+            </li>
+          </ul>
+        ) : (
+          <div className="nav-images">
+            <img src="https://placehold.co/40x40" alt="img1" />
+            <img src="https://placehold.co/40x40" alt="img2" />
+            <img src="https://placehold.co/40x40" alt="img3" />
+          </div>
+        )}
       </div>
     </nav>
   );
 }
-
-export default Navbar;

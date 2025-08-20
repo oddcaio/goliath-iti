@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
 .navbar {
     background: linear-gradient(90deg, #182a5c 50%, #3c8df8 100%);
     height: 80px;
@@ -16,22 +18,23 @@
 
 .navbar-container {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     height: 80px;
     width: 100%;
+    padding-left: 80px;
 }
 
 .navbar-logo {
-    color: #fff;
-    justify-self: start;
-    margin-left: 8px;
-    cursor: pointer;
-    text-decoration: none;
+    font-family: 'Kumbh Sans', sans-serif;
     font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: #fff;
     display: flex;
     align-items: center;
-    font-family: sans-serif;
+    text-decoration: none;
 }
 
 .fa-typo3 {
@@ -40,9 +43,9 @@
 }
 
 .nav-menu {
-    display: grid;
-    grid-template-columns: repeat(4, auto);
-    grid-gap: 10px;
+    display: flex;
+    align-items: center;
+    gap: 2px;
     list-style: none;
     text-align: center;
     width: auto;
@@ -53,22 +56,61 @@
 .nav-item {
     height: 80px;
 }
-.nav-links {
-    font-size:27px;
-    color: #fff;
+
+.nav-links,
+.nav-btn {
     display: flex;
     align-items: center;
+    height: 80px;
+    padding: 0.5rem 0.5rem;
+
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+
+    color: #fff;
     text-decoration: none;
-    padding: 0.5rem 1rem;
-    height: 100%;
+    box-sizing: border-box;
 }
 
-.navbar-logo{
-    color: #fff;
+.nav-btn {
+    display: flex;
+    align-items: center;
+    height: 35px;
+    border-radius: 4px;
+    padding: 0.5px 4px;
+    margin-top: 12%;
+
+    border: 1px solid #fff;
+    background: transparent;
+
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+    text-decoration: none;
+    box-sizing: border-box;
+    outline: none;
+
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.nav-btn:hover {
+    background: #fff;
+    color: #003366;
+    border-color: #003366;
 }
 
 .menu-icon {
     color: #fff;
-    font-size: 2.5rem;
-    margin-left: 32px;
+    font-size: 1.5rem;
+    margin-left: 12px;
+    cursor: pointer;
+}
+
+.nav-images {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-left: 16px;
 }
