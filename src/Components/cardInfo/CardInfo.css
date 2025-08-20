@@ -1,26 +1,32 @@
 .card-info {
   background: #fff;
   border: 1.5px solid #c7d6f3;
+  border-left: 6px solid #003366; /* Azul mais escuro e borda maior à esquerda */
   border-radius: 10px;
   padding: 18px 28px;
   box-shadow: 0 2px 8px rgba(0, 82, 204, 0.06);
   display: flex;
   flex-direction: column;
-  min-width: 240px;
-  max-width: 320px;
-  margin: 8px 0;
+  min-width: 200px;
+  max-width: 250px; /* reduzido para caber mais cards */
+  /* margin: 8px 0; removido para evitar conflito com gap */
   transition: box-shadow 0.2s, border-color 0.2s;
 }
 
 .card-info:hover {
   box-shadow: 0 4px 16px rgba(0, 82, 204, 0.12);
   border-color: #0052cc;
+  border-left: 6px solid #002244; /* Azul ainda mais escuro no hover */
+}
+
+.card-title,
+.card-value {
+  color: #003366; /* Azul mais escuro */
 }
 
 .card-title {
   font-size: 15px;
   font-weight: 600;
-  color: #0052cc;
   margin-bottom: 10px;
   line-height: 1.2;
 }
@@ -28,13 +34,32 @@
 .card-value {
   font-size: 28px;
   font-weight: bold;
-  color: #0052cc;
   letter-spacing: 1px;
 }
 
 .card-info-container {
   display: flex;
+  flex-wrap: nowrap; /* impede quebra de linha */
   gap: 20px;
-  flex-wrap: wrap;
-  margin-bottom: 24px;
+  justify-content: flex-start;
+  width: 100%;
+  margin: 24px 32px 24px 32px; /* margem nas laterais e em cima/baixo */
+  overflow-x: auto; /* permite rolagem horizontal se não couber */
+  padding-bottom: 8px; /* espaço para barra de rolagem */
+}
+
+@media (max-width: 1100px) {
+  .card-info-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow-x: visible;
+  }
+}
+
+@media (max-width: 900px) {
+  .card-info-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
 }
