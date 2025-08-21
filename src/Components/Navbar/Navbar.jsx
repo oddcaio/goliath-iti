@@ -26,10 +26,11 @@ export default function Navbar() {
           </ul>
         ) : (
           <div className="nav-images">
-            <img src={Logo} alt="Logo ITI" width="130" height="auto" />
-            <p style={{ fontFamily: "Kumbh Sans, sans-serif", color: "white" }}>
-              Ministério da Gestão e da Inovação em Serviços Públicos</p>
-            <img src={Logo2} alt="Logo ITI" width="130" height="auto" />
+            <img src={Logo} alt="Logo ITI" width="130" />
+            <h5 style={{ fontFamily: "Kumbh Sans, sans-serif", color: "black" }}>
+              Ministério da Gestão e da Inovação em Serviços Públicos
+            </h5>
+            <img src={Logo2} alt="Logo ITI 2" width="130" />
           </div>
         )}
       </div>

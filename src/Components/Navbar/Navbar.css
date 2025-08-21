@@ -37,6 +37,10 @@
     text-decoration: none;
 }
 
+.navbar-logo:hover {
+    background-color: rgba(255, 255, 255, 0.103);
+}
+
 .fa-typo3 {
     margin-left: 0.5rem;
     font-size: 1.8rem;
@@ -55,6 +59,10 @@
 
 .nav-item {
     height: 80px;
+}
+
+.nav-links:hover {
+    background-color: rgba(255, 255, 255, 0.103);
 }
 
 .nav-links,
@@ -101,16 +109,36 @@
     border-color: #003366;
 }
 
+
 .menu-icon {
     color: #fff;
     font-size: 1.5rem;
     margin-left: 12px;
     cursor: pointer;
+
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    /* círculo perfeito */
+    transition: all 0.3s ease-in-out;
+}
+
+.menu-icon:hover {
+    background-color: rgba(255, 255, 255, 0.103);
+    /* leve fundo circular */
 }
 
 .nav-images {
+    padding-left: 20px;
+    padding-right: 20px;
     display: flex;
     gap: 10px;
     align-items: center;
     margin-left: 16px;
+    border-radius: 35px;
+    background-color: #ffffff;
 }
