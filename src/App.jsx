@@ -3,9 +3,9 @@ import './App.css'
 import Navbar from './Components/Navbar/Navbar'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Erro from './Erro';
-import Certificados from './pages/Certificados';
-
-
+import Certificados from '../src/pages/certificados/Certificados';
+import Home from '../src/pages/home/Home';
+import Distribuicao from './pages/distribuicao/Distribuicao';
 function App() {
 
   return (
@@ -13,9 +13,10 @@ function App() {
     <div>
       <Navbar/>
       <Routes>
-        <Route path="/" />
+        <Route path="/" element={<Home />}/>
         <Route path="/certificados" element={<Certificados />} />
         <Route path="/estrutura" />
+        <Route path="/distribuicao" element={<Distribuicao />}/>
         <Route path="*" element={<Erro />} />
       </Routes>
       
